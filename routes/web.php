@@ -14,6 +14,14 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', 'HomeController@index');
-Route::post('/create', 'HomeController@create');
+Route::post('/store', 'HomeController@store');
+
 Route::get('/tweet/{id}', 'HomeController@view');
+Route::get('/tweet/{id}/edit', 'HomeController@edit');
+//put is used for updating
+Route::put('/tweet/{id}', 'HomeController@update');
+
+
+
+
 

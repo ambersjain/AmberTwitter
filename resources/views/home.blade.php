@@ -7,14 +7,12 @@
 @section('content')
 
     Post a Tweet:
-    <form action = "/create" method = "post">
+    <form action = "/store" method = "post">
         <input type="text" name="title" placeholder="Title">
         <input type="text" name="content_" placeholder="Content">
         {{csrf_field()}}
         <button type="submit">Tweet</button>
     </form>
-
-
 
     Recent Tweets:
 
@@ -27,7 +25,8 @@
             {{$message->created_at->diffForHumans()}}
             <br>
             <a href="/tweet/{{$message->id}}">Go to Tweet</a>
-
+            <br>
+            <a href="/tweet/{{$message->id}}/edit">Edit</a>
         </li>
     @endforeach
 </ul>
